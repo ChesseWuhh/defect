@@ -30,7 +30,7 @@ public sealed class PanicPower : ModPowerTemplate
 		if (player != null && target == base.Owner && dealer != null && result.BlockedDamage > 0 && props.IsPoweredAttack())
 		{
 			var orbs = player.PlayerCombatState?.OrbQueue?.Orbs;
-            var orb = orbs?.Count > 0 ? orbs[^1] : null;
+            var orb = orbs?.Count > 0 ? orbs[0] : null;
             if (orb != null)
             {
                 await OrbCmd.Passive(choiceContext, orb, null);

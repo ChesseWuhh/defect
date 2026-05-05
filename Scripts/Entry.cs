@@ -22,7 +22,9 @@ public class Entry
         
         RitsuLibFramework.CreateContentPack("defect")
             .Card<DefectCardPool, Len>()
+            .Card<DefectCardPool, Panic>()
             .Power<LenPower>()
+            .Power<PanicPower>()
             .Apply();
 
         var patcher = RitsuLibFramework.CreatePatcher("DefectPatch", "core");
