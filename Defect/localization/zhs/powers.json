@@ -5,6 +5,9 @@
 	"DEFECT_POWER_LEN_POWER.description": "[gold]激发玻璃[/gold]充能球的伤害提高其被动的1倍。",
 	"DEFECT_POWER_PANIC_POWER.title": "恐慌",
 	"DEFECT_POWER_PANIC_POWER.smartDescription": "当你格挡攻击时，触发你最右边的充能球的被动能力。",
-	"DEFECT_POWER_PANIC_POWER.description": "当你格挡攻击时，触发你最右边的充能球的被动能力。"
+	"DEFECT_POWER_PANIC_POWER.description": "当你格挡攻击时，触发你最右边的充能球的被动能力。",
+	"CONSUMING_SHADOW_POWER.title": "吞噬暗影",
+    "CONSUMING_SHADOW_POWER.description": "在你的回合开始时，吞噬最右边的非黑暗充能球，将其转化为一个黑暗球，并触发其被动效果。",
+	"CONSUMING_SHADOW_POWER.smartDescription": "在你的回合开始时，吞噬最右边的非黑暗充能球，将其转化为一个黑暗球，并触发其被动效果。"
 
 }

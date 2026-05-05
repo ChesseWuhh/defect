@@ -1,6 +1,5 @@
 using STS2RitsuLib.Patching.Models;
 using MegaCrit.Sts2.Core.Models.Cards;
-using System.Reflection;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using STS2RitsuLib;
 using MegaCrit.Sts2.Core.Models;
@@ -10,7 +9,7 @@ namespace Defect.Scripts
     public class GlassworkRarityPatch : IPatchMethod
     {
         public static string PatchId => "glasswork_rarity_patch";
-        public static string Description => "修改 Glasswork 的稀有度为普通";
+        public static string Description => "修改玻璃工艺的稀有度为普通";
         public static bool IsCritical => false;
 
         // 补丁基类 CardModel 的 get_Rarity 方法

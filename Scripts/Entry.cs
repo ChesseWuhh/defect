@@ -29,6 +29,7 @@ public class Entry
 
         var patcher = RitsuLibFramework.CreatePatcher("DefectPatch", "core");
         patcher.RegisterPatch<GlassworkRarityPatch>();
+        patcher.RegisterPatch<ConsumingShadowPatch>();
         
         if (!patcher.PatchAll())
             throw new InvalidOperationException("Required patches failed.");
