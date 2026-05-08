@@ -27,7 +27,7 @@ public sealed class PanicPower : ModPowerTemplate
     public override async Task AfterDamageReceived(PlayerChoiceContext choiceContext, Creature target, DamageResult result, ValueProp props, Creature? dealer, CardModel? __)
 	{
         var player = base.Owner.Player;
-		if (player != null && target == base.Owner && dealer != null && result.BlockedDamage > 0 && props.IsPoweredAttack())
+		if (player != null && target == base.Owner && dealer != null && result.UnblockedDamage <= 0 && props.IsPoweredAttack())
 		{
 			var orbs = player.PlayerCombatState?.OrbQueue?.Orbs;
             var orb = orbs?.Count > 0 ? orbs[0] : null;
