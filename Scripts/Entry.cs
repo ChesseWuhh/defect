@@ -23,13 +23,14 @@ public class Entry
         RitsuLibFramework.CreateContentPack("defect")
             .Card<DefectCardPool, Len>()
             .Card<DefectCardPool, Panic>()
+            .Card<DefectCardPool, IntoShadow>()
             .Power<LenPower>()
             .Power<PanicPower>()
+            .Power<IntoShadowPower>()
             .Apply();
 
         var patcher = RitsuLibFramework.CreatePatcher("DefectPatch", "core");
         patcher.RegisterPatch<GlassworkRarityPatch>();
-        patcher.RegisterPatch<ConsumingShadowPatch>();
         
         if (!patcher.PatchAll())
             throw new InvalidOperationException("Required patches failed.");

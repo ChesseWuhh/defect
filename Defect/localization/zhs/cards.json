@@ -1,8 +1,8 @@
 {
-    "DEFECT_CARD_LEN.title": "透镜",
-    "DEFECT_CARD_LEN.description": "生成1个[gold]玻璃[/gold]充能球。\n[gold]激发玻璃[/gold]充能球时伤害提高其被动效果的[blue]{LenPower}[/blue]倍",
-    "DEFECT_CARD_PANIC.title": "诧异",
-    "DEFECT_CARD_PANIC.description": "当你格挡攻击时，触发你最右边的充能球的被动能力。",
-    "CONSUMING_SHADOW.title": "吞噬暗影",
-    "CONSUMING_SHADOW.description": "在你的回合结束时，吞噬最右边的非[gold]黑暗[/gold]充能球，将其转化为一个[gold]黑暗[/gold]充能球，并触发其被动效果。"
+	"DEFECT_CARD_LEN.title": "透镜",
+	"DEFECT_CARD_LEN.description": "生成1个[gold]玻璃[/gold]充能球。\n[gold]激发玻璃[/gold]充能球时伤害提高其被动效果的{LenPower:diff()}倍",
+	"DEFECT_CARD_PANIC.title": "诧异",
+	"DEFECT_CARD_PANIC.description": "当你格挡攻击时，触发你最右边的充能球的被动能力。",
+	"DEFECT_CARD_INTO_SHADOW.title": "吞噬暗影",
+	"DEFECT_CARD_INTO_SHADOW.description": "在你的回合结束时，吞噬最右边的非[gold]黑暗[/gold]充能球，将其转化为{IntoShadowPower:diff()}个[gold]黑暗[/gold]充能球，并触发其被动效果。"
 }
