@@ -33,18 +33,24 @@ public sealed class IntoShadowPower : ModPowerTemplate
                         int count = 0;
                         if (q.Orbs == null || q.Orbs[0] == null) return;
 
+                        if (q.Orbs[0] is DarkOrb)
+                        {
+                              await CreatureCmd.TriggerAnim(player.Creature, "Cast", player.Character.CastAnimDelay);
+                        }    
+
                         for (int i = 0; i < q.Orbs.Count && count < amount; i++)
                         {
                             var orb = q.Orbs[i];
                             if (orb is not DarkOrb)
                             {
                                 var newOrb = ModelDb.Orb<DarkOrb>().ToMutable();
-                                newOrb.Owner = player;
-                                await CreatureCmd.TriggerAnim(player.Creature, "Cast", player.Character.CastAnimDelay);
+                                newOrb.Owner = player;                             
                                 newOrb.PlayChannelSfx();
-                                await OrbCmd.Replace(orb, newOrb, player);                                
+                                await OrbCmd.Replace(orb, newOrb, player);
+                                await Cmd.Wait(0.1f);                        
                             }
                             await OrbCmd.Passive(choiceContext, q.Orbs[i], null);
+                            await Cmd.Wait(0.1f);
                             count++;
                         }
                     }

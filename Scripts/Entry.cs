@@ -27,10 +27,15 @@ public class Entry
             .Power<LenPower>()
             .Power<PanicPower>()
             .Power<IntoShadowPower>()
+            .Power<FrostFocusPower>()
+            .Power<IceLancePower>()
             .Apply();
 
         var patcher = RitsuLibFramework.CreatePatcher("DefectPatch", "core");
         patcher.RegisterPatch<GlassworkRarityPatch>();
+        patcher.RegisterPatch<OrbEvokePatch>();
+        patcher.RegisterPatch<CardPoolFilterPatch>();
+        patcher.RegisterPatch<IceLancePatch>();
         
         if (!patcher.PatchAll())
             throw new InvalidOperationException("Required patches failed.");

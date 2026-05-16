@@ -16,7 +16,7 @@ using STS2RitsuLib.Scaffolding.Content.Patches;
 
 namespace Defect.Scripts;
 
-public sealed class LenPower : ModPowerTemplate
+public sealed class LenPower : CustomPowerTemplate
 {
     public override PowerType Type => PowerType.Buff;
 
@@ -27,15 +27,13 @@ public sealed class LenPower : ModPowerTemplate
         BigIconPath: "res://Defect/images/powers/len_power.png"
     );
 
-    public override async Task AfterOrbEvoked(PlayerChoiceContext choiceContext, OrbModel orb, IEnumerable<Creature> targets)
+    public decimal OnModifyOrbEvokeValue(OrbModel orb, decimal amount)
     {
-        if (orb.Owner == base.Owner.Player && orb is GlassOrb)
+        if (orb.Owner == base.Owner.Player && orb is GlassOrb glassOrb)
         {
-            List<Creature> livingTargets = targets.Where((Creature c) => c.IsAlive).ToList();
-            Flash();
-            SfxCmd.Play("slash_attack.mp3");
-            VfxCmd.PlayOnCreatureCenters(livingTargets, "vfx/vfx_attack_slash");
-            await CreatureCmd.Damage(choiceContext, livingTargets, base.Amount * orb.PassiveVal, ValueProp.Unpowered, base.Owner, null);
+            return amount + glassOrb.PassiveVal * base.Amount;
         }
+        return amount;
     }
 }
+
